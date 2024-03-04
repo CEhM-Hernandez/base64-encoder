@@ -92,17 +92,19 @@ body {
     box-shadow: none;
 }
 
-.switch {
-    height: 5rem;
-    margin: 0 1rem;
+.switch-copy {
+    height: 10rem;
+    width: 10rem;
 
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: space-around;
 }
 
-.switch .switch-btn {
-    padding: 10px 25px;
-    transition: .3s ease-in-out;
+.switch-copy .mid-btn {
+    width: 3rem;
+    height: 3rem;
 }
 
 .content .card textarea {
@@ -123,6 +125,10 @@ body {
     border-bottom-left-radius: 7px;
     border-bottom-right-radius: 7px;
     background-color: #e2e2e2;
+}
+
+.content .card textarea:focus {
+    border: solid 2px #3CA6A6;
 }
 
 /* ------------------------------- footer ------------------------------- */

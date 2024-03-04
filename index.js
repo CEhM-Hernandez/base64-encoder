@@ -1,9 +1,13 @@
 const switchBtn = document.getElementById('switch');
+const clipboardBtn = document.getElementById('clipboardBtn');
+
 const encodeBtn = document.getElementById('encodeButton');
 const txt = document.getElementById('txt');
 
 const inputArea = document.getElementById('inputArea');
 const decodeArea = document.getElementById('decodeArea')
+
+//--------------------- functions ---------------------//
 
 function encode() {
     encodeBtn.onclick = () => {
@@ -23,9 +27,9 @@ function switchInputs(input, output) {
     output.value = aux;
 }
 
-switchBtn.onclick = () => {
+//--------------------- main event (switch/encode-decode) ---------------------//
 
-    document.getElementById('switchFavicon').style.transform = 'rotate(calc(360 - 90deg))';
+switchBtn.onclick = () => {
 
     switchInputs(inputArea, decodeArea);
 
@@ -48,7 +52,13 @@ switchBtn.onclick = () => {
     }
 }
 
+//--------------------- copy to clipboard ---------------------//
+
+clipboardBtn.onclick = () => {
+
+    navigator.clipboard.writeText(decodeArea.value);
+}
+
+//--------------------- default function ---------------------//
+
 encode();
-
-
-
