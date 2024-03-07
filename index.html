@@ -19,33 +19,114 @@
         </div>
     </header>
 
-    </section>
-    <main class="content">
-        <div class="card">
-            <div class="label">
-                <div>
-                    <button id="encodeButton" class="btn">encriptar</button>
+    <main>
+        <section class="container encoder">
+            <div class="card">
+                <div class="label">
+                    <div>
+                        <button id="encodeButton" class="btn">encriptar</button>
+                    </div>
                 </div>
+                <textarea name="encode" id="inputArea" placeholder="Ingrese el texto..."></textarea>
             </div>
-            <textarea name="encode" id="inputArea" placeholder="Ingrese el texto..."></textarea>
-        </div>
-        <div class="switch-copy">
-            <button id="switch" class="btn mid-btn">
-                <i id="switchFavicon" class="fa-solid fa-arrow-right-arrow-left a"></i>
-            </button>
-            <button id="clipboardBtn" class="btn mid-btn">
-                <i class="fa fa-regular fa-copy"></i>
-            </button>
-        </div>
-        <div class="card">
-            <div class="label">
-                <div>
-                    <h2 id="txt">base64</h2>
+            <div class="switch-copy">
+                <button id="switch" class="btn mid-btn">
+                    <i id="switchFavicon" class="fa-solid fa-arrow-right-arrow-left a"></i>
+                </button>
+                <button id="clipboardBtn" class="btn mid-btn">
+                    <i class="fa fa-regular fa-copy"></i>
+                </button>
+                <span id="copy-popup">¡copiado!</span>
+            </div>
+            <div class="card">
+                <div class="label">
+                    <div>
+                        <h2 id="txt">base64</h2>
+                    </div>
                 </div>
+                <textarea name="decode" id="decodeArea" placeholder="Salida del texto encriptado en base64..."
+                    disabled></textarea>
             </div>
-            <textarea name="decode" id="decodeArea" placeholder="Salida del texto encriptado en base64..."
-                disabled></textarea>
-        </div>
+        </section>
+        <section class="info">
+            <section class="container">
+                <div class="card">
+                    <h2>¿cómo utilizar el "encriptador de base64"?</h2>
+                    <ul>
+                        <li>
+                            <h3>Encriptar Texto Claro:</h3>
+                            <p>Para encriptar texto claro convirtiéndolo en base64, sigue estos pasos:</p>
+                            <ol>
+                                <li>Escribe el mensaje que deseas encriptar en el área de texto.</li>
+                                <li>Pulsa el botón "ENCRIPTAR" situado en la parte superior del recuadro de texto.</li>
+                            </ol>
+                        </li>
+
+                        <li>
+                            <h3>Desencriptar Texto Cifrado:</h3>
+                            <p>
+                                Si deseas desencriptar un texto cifrado en base64 para recuperar el mensaje original,
+                                sigue
+                                estos pasos:
+                            </p>
+                            <ol>
+                                <li>
+                                    Presiona el botón con el ícono de "INTERCAMBIAR" que se encuentra entre ambas cajas
+                                    de
+                                    texto.
+                                </li>
+                                <li>
+                                    Luego, presiona el botón "DESENCRIPTAR" ubicado en la parte superior del recuadro de
+                                    texto.
+                                </li>
+                            </ol>
+                        </li>
+
+                        <li>
+                            <h3>Visualización y Copia del Resultado:</h3>
+                            <p>
+                                El resultado de cualquiera de los dos procesos se muestra en el segundo recuadro de
+                                texto.
+                            </p>
+                            <p>
+                                Para copiar el resultado, utiliza el botón de ícono "COPIAR" que se encuentra entre
+                                ambas
+                                cajas de texto.
+                            </p>
+                        </li>
+                    </ul>
+                    <a href="#encodeButton">
+                        <button class="btn">probar</button>
+                    </a>
+                </div>
+            </section>
+            <section class="container">
+                <div class="card">
+                    <h2>¿qué es base64?</h2>
+                    <p class="def">
+                        La codificación Base64 es un método estándar para representar datos binarios mediante caracteres
+                        imprimibles del conjunto ASCII. Funciona tomando un flujo de datos binarios y lo divide en
+                        bloques
+                        de 6 bits. Cada bloque de 6 bits se traduce a un carácter del conjunto de caracteres definido
+                        por
+                        Base64.
+                    </p>
+                    <p class="def">
+                        El conjunto de caracteres Base64 consta típicamente de 64 caracteres, que incluyen letras
+                        mayúsculas
+                        y minúsculas, dígitos numéricos y algunos caracteres especiales. Estos caracteres se eligen de
+                        tal
+                        manera que sean seguros para su transmisión a través de sistemas que pueden corromper o
+                        malinterpretar ciertos caracteres, como en el caso de la transmisión de datos por correo
+                        electrónico
+                        o a través de protocolos de comunicación específicos.
+                    </p>
+                    <span>
+                        <a href="https://es.wikipedia.org/wiki/Base64" target="_blank">Más información.</a>
+                    </span>
+                </div>
+            </section>
+        </section>
     </main>
 
     <footer>
@@ -65,7 +146,7 @@
                     <a href="https://www.linkedin.com/in/eduardo-hernandez-munevar/" target="_blank">
                         <i class="fa-brands fa-linkedin-in"></i>
                     </a>
-                    <a href="mailto:ceduardo.eh@gmail.com" target="_blank">
+                    <a href="https://www.gmail.com/" target="_blank">
                         <i class="fa-regular fa-envelope"></i>
                     </a>
                     <a href="https://wa.link/skgk3q" target="_blank">
@@ -85,5 +166,18 @@
     <script src="index.js"></script>
     <script src="https://kit.fontawesome.com/7938d78b4b.js" crossorigin="anonymous"></script>
 </body>
+
+<!-- 
+________/\\\\\\\\\__/\\\\\\\\\\\\\\\__/\\\__________/\\\\____________/\\\\_        
+ _____/\\\////////__\/\\\///////////__\/\\\_________\/\\\\\\________/\\\\\\_       
+  ___/\\\/___________\/\\\_____________\/\\\_________\/\\\//\\\____/\\\//\\\_      
+   __/\\\_____________\/\\\\\\\\\\\_____\/\\\_________\/\\\\///\\\/\\\/_\/\\\_     
+    _\/\\\_____________\/\\\///////______\/\\\\\\\\\\__\/\\\__\///\\\/___\/\\\_    
+     _\//\\\____________\/\\\_____________\/\\\/////\\\_\/\\\____\///_____\/\\\_   
+      __\///\\\__________\/\\\_____________\/\\\___\/\\\_\/\\\_____________\/\\\_  
+       ____\////\\\\\\\\\_\/\\\\\\\\\\\\\\\_\/\\\___\/\\\_\/\\\_____________\/\\\_ 
+        _______\/////////__\///////////////__\///____\///__\///______________\///__
+
+ -->
 
 </html>

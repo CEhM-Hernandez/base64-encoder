@@ -5,7 +5,7 @@ const encodeBtn = document.getElementById('encodeButton');
 const txt = document.getElementById('txt');
 
 const inputArea = document.getElementById('inputArea');
-const decodeArea = document.getElementById('decodeArea')
+const decodeArea = document.getElementById('decodeArea');
 
 //--------------------- functions ---------------------//
 
@@ -55,8 +55,12 @@ switchBtn.onclick = () => {
 //--------------------- copy to clipboard ---------------------//
 
 clipboardBtn.onclick = () => {
-
     navigator.clipboard.writeText(decodeArea.value);
+
+    document.getElementById('copy-popup').style.opacity = '1';
+    setTimeout(() => {
+        document.getElementById('copy-popup').style.opacity = '0';
+    }, 2000);
 }
 
 //--------------------- default function ---------------------//
