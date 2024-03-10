@@ -1,25 +1,17 @@
-const switchBtn = document.getElementById('switch');
-const clipboardBtn = document.getElementById('clipboardBtn');
+const switchBtn = document.getElementById("switchBtn");
+const clipboardBtn = document.getElementById("clipboardBtn");
 
-const encodeBtn = document.getElementById('encodeButton');
-const txt = document.getElementById('txt');
+const inputTxt = document.getElementById("inputTxt");
+const outputTxt = document.getElementById("outputTxt");
 
-const inputArea = document.getElementById('inputArea');
-const decodeArea = document.getElementById('decodeArea');
+const inputArea = document.getElementById("inputArea");
+const decodeArea = document.getElementById("decodeArea");
 
 //--------------------- functions ---------------------//
 
-function encode() {
-    encodeBtn.onclick = () => {
-        decodeArea.value = btoa(inputArea.value);
-    }
-}
-
-function decode() {
-    encodeBtn.onclick = () => {
-        decodeArea.value = atob(inputArea.value);
-    }
-}
+inputArea.addEventListener("keyup", function () {
+    decodeArea.value = `${inputTxt.textContent === "encriptar" ? btoa(inputArea.value) : atob(inputArea.value)}`;
+});
 
 function switchInputs(input, output) {
     let aux = input.value;
@@ -31,24 +23,24 @@ function switchInputs(input, output) {
 
 switchBtn.onclick = () => {
 
+    const switchTooltip = document.getElementById("switchTooltip");
+
     switchInputs(inputArea, decodeArea);
 
-    if (encodeBtn.textContent === 'encriptar') {
-        encodeBtn.textContent = 'desencriptar';
-        txt.textContent = 'texto';
+    if (inputTxt.textContent === "encriptar") {
+        switchTooltip.textContent = inputTxt.textContent;
+        inputTxt.textContent = "desencriptar";
+        outputTxt.textContent = "texto";
 
-        inputArea.setAttribute('placeholder', 'Ingrese el texto encriptado en base 64...');
-        decodeArea.setAttribute('placeholder', 'Salida del texto desencriptado...');
-
-        decode();
+        inputArea.setAttribute("placeholder", "Ingrese el código en base 64...");
+        decodeArea.setAttribute("placeholder", "Salida del texto desencriptado...");
     } else {
-        encodeBtn.textContent = 'encriptar';
-        txt.textContent = 'base64';
+        switchTooltip.textContent = inputTxt.textContent;
+        inputTxt.textContent = "encriptar";
+        outputTxt.textContent = "base64";
 
-        inputArea.setAttribute('placeholder', 'Ingrese el texto...');
-        decodeArea.setAttribute('placeholder', 'Salida del texto encriptado en base64...');
-
-        encode();
+        inputArea.setAttribute("placeholder", "Ingrese el texto...");
+        decodeArea.setAttribute("placeholder", "Salida del código encriptado en base64...");
     }
 }
 
@@ -57,12 +49,13 @@ switchBtn.onclick = () => {
 clipboardBtn.onclick = () => {
     navigator.clipboard.writeText(decodeArea.value);
 
-    document.getElementById('copy-popup').style.opacity = '1';
+    const copyAlert = document.getElementById("copyAlert");
+
+    copyAlert.style.bottom = "50%";
+    copyAlert.style.opacity = ".95";
+
     setTimeout(() => {
-        document.getElementById('copy-popup').style.opacity = '0';
+        copyAlert.style.bottom = "0";
+        copyAlert.style.opacity = "0";
     }, 2000);
 }
-
-//--------------------- default function ---------------------//
-
-encode();
