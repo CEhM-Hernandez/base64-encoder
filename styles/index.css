@@ -12,40 +12,34 @@ body {
 
 .hero-logo {
     width: 100%;
+    padding: 30px;
 
     display: flex;
     justify-content: center;
+    align-items: center;
 
+    color: #FFF;
     background-color: #3CA6A6;
     box-shadow: 5px 5px 15px 0px rgba(54, 54, 54, 0.3);
 }
 
-.hero-logo a {
-    padding: 2rem;
-    color: #FFF;
-
-    display: flex;
-    align-items: center;
-
-    text-align: center;
-}
-
-.hero-logo a img {
+.hero-logo img {
     width: 7rem;
 }
 
-.title {
+.hero-logo h1 {
     text-transform: uppercase;
 }
 
 /* ------------------------------- containers & content ------------------------------- */
 main {
-    width: 70%;
+    width: 85%;
     margin: auto;
 }
 
 .card {
     width: 100%;
+    min-width: 290px;
     padding: 1.5rem;
     margin-top: 5rem;
 
@@ -64,7 +58,7 @@ main {
 }
 
 .card .container .label {
-    height: 5rem;
+    height: 4rem;
     width: 100%;
 
     display: inline-flex;
@@ -82,7 +76,7 @@ main {
 }
 
 .card .container .label h2 {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .btn {
@@ -99,8 +93,8 @@ main {
 }
 
 .btn span {
-    height: 3rem;
-    width: 3rem;
+    height: 2.5rem;
+    width: 2.5rem;
 
     position: relative;
     z-index: 2;
@@ -116,8 +110,8 @@ main {
 }
 
 .btn span i {
-    font-size: 20px;
-    line-height: 3rem;
+    font-size: 18px;
+    line-height: 2.5rem;
 }
 
 .btn .tooltip {
@@ -244,7 +238,7 @@ footer {
 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 5rem;
+    gap: 2rem;
 
 }
 
@@ -252,27 +246,20 @@ footer {
     width: 100%;
 
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-}
 
-.footer-content .box a img {
-    width: 50%;
-    padding: .5rem;
-    margin: auto;
-
-    display: block;
-}
-
-.footer-content .box h2 {
     text-align: center;
+    text-transform: uppercase;
     color: #FFF;
 }
 
-.footer-content .box h3 {
-    font-size: xx-large;
-    text-transform: uppercase;
+.footer-content .box:last-child {
+    flex-direction: column;
+}
+
+.footer-content .box img {
+    width: 7rem;
 }
 
 .footer-content .box .social-media {
@@ -322,9 +309,7 @@ footer {
     text-align: center;
     font-size: larger;
     color: #d0d0d0;
-
     background-color: #015b65;
-
 }
 
 .end-page a {
